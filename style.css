@@ -26,6 +26,11 @@ body {
     padding: 2rem 0;
 }
 
+.container p {
+  margin-bottom: 20px; /* Space between paragraphs */
+  text-align: justify; /* Optional: Aligns text evenly on both sides */
+}
+
 section {
     padding: 5rem 0;
 }
