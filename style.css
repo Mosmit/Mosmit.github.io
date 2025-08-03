@@ -144,6 +144,46 @@ section:nth-child(even) {
     color: var(--accent);
 }
 
+.container1 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+.container1 h1 {
+  text-align:left;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.interests-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* space between columns */
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.interest-section {
+  flex: 1; /* makes all columns equal width */
+  min-width: 250px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.interest-section h2 {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+.interest-section ul {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
 /* Contact Form */
 form {
     max-width: 600px;
