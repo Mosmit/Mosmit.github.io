@@ -12,7 +12,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* This effect whole body of the web page */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -25,7 +25,7 @@ body {
     left: -9999px;
 }
 
-/* Style the label as a toggle button */
+/* Styling the label as a toggle button, was assisted by some internet searches to get it right, would have been easier with Javascript but its not allowed for this hackathon */
 .toggle-label {
     position: fixed;
     top: 1rem;
@@ -39,7 +39,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Toggle styles using :checked */
+/* Toggle styles using :checked, this implies clicked and unclicked, its taking some features from the global*/
 #darkToggle:checked ~ body *,
 #darkToggle:checked ~ * {
     --primary: #5d07df;
@@ -126,7 +126,7 @@ nav a:hover {
     color: var(--secondary);
 }
 
-/* Hero Section */
+/* Hero Section, I used my image as the background for the home page or front page*/
 #hero {
     background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('assets/mosmit-picture1.jpeg');
     background-repeat: no-repeat;
@@ -239,6 +239,7 @@ section:nth-child(even) {
     color: var(--accent);
 }
 
+/* i had issues with this particular container inheriting the previous, was unable to effect the change i wanted, so i had to add 1 at the end to separate it out **would have to study more on it */
 .container1 {
   max-width: 1000px;
   margin: 0 auto;
@@ -326,7 +327,7 @@ footer {
 }
 
 
-/* Responsive Design */
+/* Responsive Design, this is for smaller screen */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
