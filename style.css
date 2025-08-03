@@ -19,6 +19,61 @@ body {
     color: #333;
 }
 
+/* Hide the checkbox but keep it accessible */
+.toggle-checkbox {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Style the label as a toggle button */
+.toggle-label {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1100;
+    font-size: 0.9rem;
+}
+
+/* Toggle styles using :checked */
+#darkToggle:checked ~ * {
+    --primary: #ecf0f1;
+    --secondary: #3498db;
+    --accent: #e67e22;
+    --light: #1a252f;
+    --dark: #ffffff;
+    background-color: #1a252f;
+    color: #ecf0f1;
+}
+
+#darkToggle:checked header,
+#darkToggle:checked footer {
+    background-color: #0f1820;
+}
+
+#darkToggle:checked .btn,
+#darkToggle:checked button {
+    background: #3498db;
+}
+
+#darkToggle:checked .edu-item,
+#darkToggle:checked .project-card,
+#darkToggle:checked .interest-section {
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+#darkToggle:checked input,
+#darkToggle:checked textarea {
+    background-color: #34495e;
+    color: #fff;
+    border: 1px solid #555;
+}
+
 .container {
     width: 85%;
     max-width: 1200px;
@@ -144,6 +199,23 @@ section:nth-child(even) {
     background: #2980b9;
     transform: translateY(-3px);
 }
+
+.btn, button {
+    transition: 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover, button:hover {
+    transform: scale(1.05);
+}
+
+.edu-item, .project-card, .interest-section {
+    transition: transform 0.3s ease;
+}
+
+.edu-item:hover, .project-card:hover, .interest-section:hover {
+    transform: translateY(-5px);
+}
+
 
 /* Skills Grid */
 #skills ul {
