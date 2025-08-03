@@ -70,10 +70,14 @@ Welcome to my personal portfolio! This project showcases my academic background,
 ## Contact
 Feel free to reach out through:
 
-- Email: [oluwaseunmartinsowolabi@gmail.com]
+- Email: oluwaseunmartinsowolabi@gmail.com
 
 - GitHub: https://github.com/Mosmit
 
 - LinkedIn: https://linkedin.com/in/oluwaseun-owolabi-02a583366
 
 - X: https://x.com/SiRmosmit10
+
+---
+
+THANK YOU VERY MUCH **PLP TEAM**, I HAVE BEEN ABLE TO LEARN NEW THINGS THROUGH THIS PROJECT
