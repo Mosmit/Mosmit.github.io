@@ -56,3 +56,24 @@ Welcome to my personal portfolio! This project showcases my academic background,
 - **Footer:** Copyright
 
 ---
+
+## Future Enhancements
+
+- Adding full **Functionality**
+- Updating the **Projects Section**
+- Build and showcase real-world projects
+- Integrate GitHub API to show repositories dynamically
+- Add a blog section or learning journal
+
+---
+
+## Contact
+Feel free to reach out through:
+
+- Email: [oluwaseunmartinsowolabi@gmail.com]
+
+- GitHub: https://github.com/Mosmit
+
+- LinkedIn: https://linkedin.com/in/oluwaseun-owolabi-02a583366
+
+- X: https://x.com/SiRmosmit10
