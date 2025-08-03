@@ -40,8 +40,9 @@ body {
 }
 
 /* Toggle styles using :checked */
+#darkToggle:checked ~ body *,
 #darkToggle:checked ~ * {
-    --primary: #ecf0f1;
+    --primary: #5d07df;
     --secondary: #3498db;
     --accent: #e67e22;
     --light: #1a252f;
@@ -210,6 +211,7 @@ section:nth-child(even) {
 
 .edu-item, .project-card, .interest-section {
     transition: transform 0.3s ease;
+    color:black;
 }
 
 .edu-item:hover, .project-card:hover, .interest-section:hover {
@@ -244,7 +246,7 @@ section:nth-child(even) {
   font-family: Arial, sans-serif;
 }
 
-.container1 h1 {
+.container1 h2 {
   text-align:center;
   margin-bottom: 30px;
   color: #2c3e50;
