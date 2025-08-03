@@ -7,6 +7,10 @@
     --dark: #1a252f;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -119,11 +123,13 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
     color: var(--secondary);
+    transform:scale(1.1);
+    text-decoration: underline;
 }
 
 /* Hero Section, I used my image as the background for the home page or front page*/
@@ -167,6 +173,37 @@ nav a:hover {
     border: 4px solid var(--light);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: white;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
+}
+
+/* Adding a bit of interactivity to my h2, this effect will only show when the page is refreshed */
+h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .container h2 {
     text-align: center;
