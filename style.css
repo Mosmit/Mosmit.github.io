@@ -95,6 +95,10 @@ nav a:hover {
     margin: 0 auto;
 }
 
+.container h2 {
+    text-align: center;
+}
+
 /* Section Styles */
 section:nth-child(even) {
     background-color: #f9f9f9;
@@ -152,7 +156,7 @@ section:nth-child(even) {
 }
 
 .container1 h1 {
-  text-align:left;
+  text-align:center;
   margin-bottom: 30px;
   color: #2c3e50;
 }
