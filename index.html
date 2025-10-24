@@ -1,165 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Oluwaseun Martins Owolabi Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="assets/favicon.ico">
-    </head>
-    <body>
-        <!-- The code below is for the toggle dark mode, to change the appearance of my portfolio. i was assisted with searches on the internet to get the understanding -->
-        <input type="checkbox" id="darkToggle" class="toggle-checkbox">
-        <label for="darkToggle" class="toggle-label">Toggle <strong>🌙Dark Mode</strong></label>
-        <!-- Header: Displaying all the sections and attributes of my portfolio, including home to return back to starting point instead of scrolling back up -->
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#education">Educational Background</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#interests">Interests</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-            </nav>
-        </header>
-        <!-- This section introduces who i am -->
-        <section id="hero">
-            <div class="container hero-content">
-                <img src="assets/mosmit-picture1.jpeg" alt="oluwaseun profile picture" class="hero-photo">
-                <h1>Oluwaseun Martins Owolabi</h1>
-                <p>Scientist | Cancer Researcher | Software Engineer(in-training)</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oluwaseun Martins Owolabi Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+    
+    <button id="darkToggle" class="toggle-button">🌙</button>
+
+    <header>
+        <nav>
+            <div class="logo"><a href="#hero">O.M.O.</a></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills-tools">Skills & Tools</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#scientific-projects">Scientific Projects</a></li>
+                <li><a href="#programming-projects">Programming Projects</a></li>
+                <li><a href="#conferences">Conferences</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
-            <!-- This scroll down is added to bring the attention of first time visitors to my porfolio website that there are still contents below and they should scroll down to view -->
-            <div class="scroll-down">↓ Scroll</div>
-        </section>
-        <!-- This section explains in summary who i am -->
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>I am a passionate and driven biochemist with strong expertise in molecular biology, biophysics, and cancer research. Holding a First-Class degree in Biochemistry and a growing academic and research background, I am committed to uncovering innovative solutions in oncology through collaborative, data-driven, and personalized approaches. I aim to leverage modern laboratory tools and molecular techniques to drive translational research and meaningful scientific impact.
-                </p>
-                <p>Beyond the laboratory, I am currently a recipient of the <strong>Power Learn Project scholarship</strong>, where I am acquiring the skills necessary to become a proficient software engineering. My vision is to integrate my scientific expertise with software engineering to address real-world challenges in Nigeria, across Africa, and globally.</p>
-                <p>I am actively involved in mentoring, public speaking, digital literacy advocacy, volunteering, and exploring the intersection of software engineering and blockchain technology with biochemistry. I believe in the power of interdisciplinary collaboration to advance healthcare, research, and innovation.</p>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container hero-content">
+            <img src="assets/mosmit-picture1.jpeg" alt="oluwaseun profile picture" class="hero-photo">
+            <h1>Oluwaseun Martins Owolabi</h1>
+            <p>Scientist | Cancer Researcher | Software Engineer(in-training)</p>
+        </div>
+        <div class="scroll-down">↓ Scroll</div>
+    </section>
+
+    <section id="about" class="hidden-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a passionate and driven biochemist with strong expertise in molecular biology, biophysics, and cancer research. Holding a First-Class degree in Biochemistry and a growing academic and research background, I am committed to uncovering innovative solutions in oncology through collaborative, data-driven, and personalized approaches. I aim to leverage modern laboratory tools and molecular techniques to drive translational research and meaningful scientific impact.
+            </p>
+            <p>Beyond the laboratory, I am currently a recipient of the <strong>Power Learn Project scholarship</strong>, where I am acquiring the skills necessary to become a proficient software engineering. My vision is to integrate my scientific expertise with software engineering to address real-world challenges in Nigeria, across Africa, and globally.</p>
+            <p>I am actively involved in mentoring, public speaking, digital literacy advocacy, volunteering, and exploring the intersection of software engineering and blockchain technology with biochemistry. I believe in the power of interdisciplinary collaboration to advance healthcare, research, and innovation.</p>
+        </div>
+    </section>
+
+    <section id="education" class="hidden-section">
+        <div class="container">
+            <h2>Educational Background</h2>
+            <div class="edu-item">
+                <h3>M.Sc. Biochemistry (Cancer Research)</h3>
+                <p>University of Ibadan, Nigeria | 2025 - Present</p>
             </div>
-        </section>
-        <!-- This section contains my educational qualifications and grade -->
-        <section id="education">
-            <div class="container">
-                <h2>Educational Background</h2>
-                <div class="edu-item">
-                    <h3>M.Sc. Biochemistry (Cancer Research)</h3>
-                    <p>University of Ibadan, Nigeria | 2025 - Present</p>
+            <div class="edu-item">
+                <h3>B.Tech Biochemistry (First Class Honors)</h3>
+                <p>Olusegun Agagu University of Science and Technology, Okitipupa (OAUSTECH), Nigeria | <strong>CGPA: 4.79/5.0</strong></p>
+            </div>
+            <a href="assets/Oluwaseun_CV.pdf" download class="btn">Download My CV</a>
+        </div>
+    </section>
+
+    <section id="skills-tools" class="hidden-section">
+        <div class="container">
+            <h2>Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & Web</h3>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Python</li>
+                        <li>Dart & Flutter</li>
+                        <li>Solidity</li>
+                    </ul>
                 </div>
-                <div class="edu-item">
-                    <h3>B.Tech Biochemistry (First Class Honors)</h3>
-                    <p>Olusegun Agagu University of Science and Technology, Okitipupa (OAUSTECH), Nigeria | <strong>CGPA: 4.79/5.0</strong></p>
+                <div class="skill-category">
+                    <h3>Scientific & Research Tools</h3>
+                    <ul>
+                        <li>PyRx</li>
+                        <li>Pymol</li>
+                        <li>Biovia Discovery Studio</li>
+                        <li>AlphaFold</li>
+                        <li>RDKit</li>
+                        <li>Cytoscape</li>
+                        <li>ShinyGO</li>
+                        <li>BioRender</li>
+                    </ul>
                 </div>
-                <!-- Below is my downloadable CV, the href link to the asset folder in my project directory where i saved my CV in pdf format -->
-                <a href="assets/Oluwaseun_CV.pdf" download class="btn">Download My CV</a>
-            </div>
-        </section>
-         <!-- This section showcase the skills i possess such as scientific skills, technical skills and programming skills -->
-        <section id="skills">
-            <div class="container">
-                <h2>Programming Skills</h2>
-                <ul>
-                    <li>HTML/CSS (Web Development)</li>
-                    <li>JavaScript</li>
-                    <li>Solidity</li>
-                    <li>Python</li>
-                </ul>
-                <h2>Technical & Scientific Skills</h2>
-                <ul>
-                    <li>Molecular Biology Techniques</li>
-                    <li>UV-Spectrophotometry</li>
-                    <li>HPLC (High Pressure Liquid Chromatography)</li>
-                    <li>GC-FID (Gas Chromatography Flame Ionization Detector)</li>
-                    <li>Scientific Data Analysis</li>
-                    <li>Molecular Docking</li>
-                    <li>Animal Handling & Biochemical Assays</li>
-                </ul>
-            </div>
-        </section>
-        <!-- This section explains my interests -->
-        <section id="interests">
-            <div class="container1">
-                <h2>Interest</h2>
-                <div class="interests-wrapper">
-                    <div class="interest-section">
-                        <h2>Web Development</h2>
-                        <ul>
-                            <li>Exploring modern frameworks and best practices.</li>
-                            <li>Actively engaging with PLP LMS</li>
-                            <li>Watching exciting YouTube Web Development videos</li>
-                            <li>Replicating Projects to hone my skills</li>
-                        </ul>
-                    </div>
-                    <div class="interest-section">
-                        <h2>Research Interests</h2>
-                        <ul>
-                            <li>Personalized Cancer Therapeutics</li>
-                            <li>Metabolic Pathway Engineering</li>
-                            <li>Computational Biochemistry</li>
-                            <li>Publishing Scientific Papers</li>
-                        </ul>
-                    </div>
-                    <div class="interest-section">
-                        <h2>Extracurricular Interests</h2>
-                        <ul>
-                            <li>Watching Football</li>
-                            <li>Playing Chess</li>
-                            <li>Brainstorming with colleagues</li>
-                            <li>Gym</li>
-                        </ul>
-                    </div>
+                <div class="skill-category">
+                    <h3>Data & ML</h3>
+                    <ul>
+                        <li>Matplotlib</li>
+                        <li>Kaggle</li>
+                        <li>Scientific Data Analysis</li>
+                        <li>Molecular Docking</li>
+                        <li>Network Pharmacology</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>General & Productivity</h3>
+                    <ul>
+                        <li>Gemini AI (for Research)</li>
+                        <li>Video Creation</li>
+                        <li>PowerPoint Presentation</li>
+                        <li>Git & GitHub</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-        <!-- This section will highlight my built project, for the purpose of this hackathon, I have created the section for it-->
-        <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="project-card">
-                    <h3>No Standard Project</h3>
-                    <p>I am still learning and developing the skills needed to build impactful real-world projects, which I will update in this section over time.</p>
+        </div>
+    </section>
+    
+    <section id="certifications" class="hidden-section">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="assets/coursera-logo.png" alt="Coursera" class="card-image">
+                    <h3>Certificate Title</h3>
+                    <p>Issued by Coursera</p>
+                    <a href="#" class="btn-small" target="_blank">View Credential</a>
+                </div>
+                <div class="card">
+                    <img src="assets/udemy-logo.png" alt="Udemy" class="card-image">
+                    <h3>Certificate Title</h3>
+                    <p>Issued by Udemy</p>
+                    <a href="#" class="btn-small" target="_blank">View Credential</a>
+                </div>
+                <div class="card">
+                    <img src="assets/harvard-cs50-logo.png" alt="CS50" class="card-image">
+                    <h3>CS50 Certificate</h3>
+                    <p>Issued by HarvardX</p>
+                    <a href="#" class="btn-small" target="_blank">View Credential</a>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="scientific-projects" class="hidden-section">
+        <div class="container">
+            <h2>Scientific Projects</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Molecular Docking Project</h3>
+                    <p>A brief description of the project, the tools used (e.g., PyRx, Discovery Studio), and the outcomes.</p>
+                    <a href="#" class="btn-small" target="_blank">View Study</a>
+                </div>
+                <div class="card">
+                    <h3>Network Pharmacology Project</h3>
+                    <p>A brief description of the project, the tools used (e.g., Cytoscape, ShinyGO), and the insights gained.</p>
+                    <a href="#" class="btn-small" target="_blank">View Analysis</a>
+                </div>
+                <div class="card">
+                    <h3>Molecular Dynamics Simulation</h3>
+                    <p>A brief description of the simulation, the software used, and the findings.</p>
+                    <a href="#" class="btn-small" target="_blank">View Simulation</a>
+                </div>
+                 <div class="card">
+                    <h3>BioRender Illustration</h3>
+                    <p>A description of the scientific concept illustrated using BioRender for a publication or presentation.</p>
+                    <a href="#" class="btn-small" target="_blank">View Figure</a>
                 </div>
             </div>
-        </section>
-        <!-- This is my Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <!-- i created a formspree account and copied my ID and pasted it below, to accept any input into the form, since advanced functionality is not allowed for this hackathon, this is the best i can do in accepting form response -->
-                <form action="https://formspree.io/f/mldlwlkr" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+        </div>
+    </section>
+
+    <section id="programming-projects" class="hidden-section">
+        <div class="container">
+            <h2>Programming & ML Projects</h2>
+            
+            <div class="filter-buttons">
+                <button class="btn-filter active" data-filter="all">All</button>
+                <button class="btn-filter" data-filter="python">Python</button>
+                <button class="btn-filter" data-filter="javascript">JavaScript</button>
+                <button class="btn-filter" data-filter="flutter">Flutter</button>
+                <button class="btn-filter" data-filter="ml">ML/Data</button>
+                <button class="btn-filter" data-filter="blockchain">Blockchain</button>
             </div>
-        </section>
-        <!-- This is my Footer section-->
-        <footer>
-            <!-- copyright -->
-            <p>© 2025 Oluwaseun Martins Owolabi | +234 903 858 8193 </p>
-            <!-- As a form of direct contact, I went online to download svg icon of some social media and saved them under the asset folder of my project directory -->
-            <div class="social-icons">
-                <!-- for Github.com -->
-                <a href="https://github.com/Mosmit" target="_blank">
-                    <img src="assets/github.svg" alt="GitHub">
-                </a>
-                <!-- For LinkedIn -->
-                <a href="https://linkedin.com/in/oluwaseun-owolabi-02a583366" target="_blank">
-                    <img src="assets/linkedin.svg" alt="LinkedIn">
-                </a>
-                <!-- For X.com formerly known as Twitter -->
-                <a href="https://x.com/SiRmosmit10" target="_blank">
-                    <img src="assets/x.svg" alt="X">
-                </a>
+
+            <div class="card-grid project-grid">
+                <div class="card project-card" data-category="python ml">
+                    <h3>Data Visualization Sample (Python)</h3>
+                    <p>A project using Matplotlib/Seaborn to visualize a dataset from Kaggle. (ML, Python)</p>
+                    <a href="#" class="btn-small" target="_blank">View on GitHub</a>
+                </div>
+                <div class="card project-card" data-category="javascript">
+                    <h3>Udemy Mini-Project (JS)</h3>
+                    <p>A small web app built as part of a JavaScript course, demonstrating DOM manipulation.</p>
+                    <a href="#" class="btn-small" target="_blank">View on GitHub</a>
+                </div>
+                <div class="card project-card" data-category="flutter">
+                    <h3>Mobile App (Flutter)</h3>
+                    <p>A cross-platform mobile application built with Dart and Flutter.</p>
+                    <a href="#" class="btn-small" target="_blank">View on GitHub</a>
+                </div>
+                 <div class="card project-card" data-category="blockchain">
+                    <h3>Blockchain Project (Solidity)</h3>
+                    <p>A smart contract or DApp concept developed using Solidity.</p>
+                    <a href="#" class="btn-small" target="_blank">View on GitHub</a>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="conferences" class="hidden-section">
+        <div class="container">
+            <h2>Conferences & Webinars</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Lecture Delivered: [Topic]</h3>
+                    <p><strong>Role:</strong> Speaker/Host<br><strong>Event:</strong> [Conference Name]<br>A brief note on the talk's focus.</p>
+                </div>
+                <div class="card">
+                    <h3>Webinar Attended: [Topic]</h3>
+                    <p><strong>Role:</strong> Attendee<br><strong>Event:</strong> [Webinar Series]<br>Key takeaways from the event.</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="interests" class="hidden-section">
+        <div class="container">
+            <h2>Interests</h2>
+            <div class="interests-wrapper">
+                <div class="interest-section">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>Exploring modern frameworks and best practices.</li>
+                        <li>Actively engaging with PLP LMS</li>
+                        <li>Watching exciting YouTube Web Development videos</li>
+                        <li>Replicating Projects to hone my skills</li>
+                    </ul>
+                </div>
+                <div class="interest-section">
+                    <h3>Research Interests</h3>
+                    <ul>
+                        <li>Personalized Cancer Therapeutics</li>
+                        <li>Metabolic Pathway Engineering</li>
+                        <li>Computational Biochemistry</li>
+                        <li>Publishing Scientific Papers</li>
+                    </ul>
+                </div>
+                <div class="interest-section">
+                    <h3>Extracurricular Interests</h3>
+                    <ul>
+                        <li>Watching Football</li>
+                        <li>Playing Chess</li>
+                        <li>Brainstorming with colleagues</li>
+                        <li>Gym</li>
+                    </ul>
+                </div>
             </div>
-        </footer>
-    </body>
+        </div>
+    </section>
+
+    <section id="contact" class="hidden-section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="https://formspree.io/f/mldlwlkr" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Oluwaseun Martins Owolabi | +234 903 858 8193 </p>
+        <div class="social-icons">
+            <a href="https://github.com/Mosmit" target="_blank">
+                <img src="assets/github.svg" alt="GitHub">
+            </a>
+            <a href="https://linkedin.com/in/oluwaseun-owolabi-02a583366" target="_blank">
+                <img src="assets/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://x.com/SiRmosmit10" target="_blank">
+                <img src="assets/x.svg" alt="X">
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>

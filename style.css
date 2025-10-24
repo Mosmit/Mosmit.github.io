@@ -5,6 +5,11 @@
     --accent: #e74c3c;
     --light: #ecf0f1;
     --dark: #1a252f;
+    --bg-light: #ffffff;
+    --bg-medium: #f9f9f9;
+    --text-light: #ecf0f1;
+    --text-dark: #333;
+    --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -16,123 +21,152 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
-/* This effect whole body of the web page */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hide the checkbox but keep it accessible */
-.toggle-checkbox {
-    position: absolute;
-    left: -9999px;
-}
-
-/* Styling the label as a toggle button, was assisted by some internet searches to get it right, would have been easier with Javascript but its not allowed for this hackathon */
-.toggle-label {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background-color: var(--primary);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    z-index: 1100;
-    font-size: 0.9rem;
-}
-
-/* Toggle styles using :checked, this implies clicked and unclicked, its taking some features from the global*/
-#darkToggle:checked ~ body *,
-#darkToggle:checked ~ * {
+/* --- Dark Mode --- */
+body.dark-mode {
     --primary: #5d07df;
     --secondary: #3498db;
     --accent: #e67e22;
     --light: #1a252f;
     --dark: #ffffff;
-    background-color: #1a252f;
-    color: #ecf0f1;
+    --bg-light: #1a252f;
+    --bg-medium: #0f1820;
+    --text-light: #1a252f;
+    --text-dark: #ecf0f1;
+    --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-#darkToggle:checked header,
-#darkToggle:checked footer {
-    background-color: #0f1820;
+.toggle-button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1100;
+    font-size: 1.2rem;
+    border: none;
+    line-height: 1;
 }
 
-#darkToggle:checked .btn,
-#darkToggle:checked button {
-    background: #3498db;
+body.dark-mode .toggle-button {
+    background-color: var(--secondary);
+    color: var(--text-dark);
 }
 
-#darkToggle:checked .edu-item,
-#darkToggle:checked .project-card,
-#darkToggle:checked .interest-section {
-    background: #2c3e50;
-    color: #ecf0f1;
-}
-
-#darkToggle:checked input,
-#darkToggle:checked textarea {
-    background-color: #34495e;
-    color: #fff;
-    border: 1px solid #555;
-}
-
+/* --- Typography & Containers --- */
 .container {
-    width: 85%;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 2rem 0;
 }
 
 .container p {
-  margin-bottom: 20px; /* Space between paragraphs */
-  text-align: justify; /* Optional: Aligns text evenly on both sides */
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
 section {
     padding: 5rem 0;
+    overflow: hidden; /* For animations */
+}
+
+section:nth-child(even) {
+    background-color: var(--bg-medium);
 }
 
 h1, h2, h3 {
     color: var(--primary);
+    margin-bottom: 1.5rem;
 }
 
-/* Header Styles */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--secondary);
+}
+
+/* --- Header & Navigation --- */
 header {
     background: var(--primary);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
+nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 0;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
     list-style: none;
-    padding: 1rem;
 }
 
-nav li {
-    margin: 0 1.5rem;
+.nav-links li {
+    margin: 0 1rem;
 }
 
-nav a {
+.nav-links a {
     color: white;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
+    padding: 0.2rem 0;
+    border-bottom: 2px solid transparent;
 }
 
-nav a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--secondary);
-    transform:scale(1.1);
-    text-decoration: underline;
+    border-bottom-color: var(--secondary);
 }
 
-/* Hero Section, I used my image as the background for the home page or front page*/
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- Hero Section --- */
 #hero {
     background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('assets/mosmit-picture1.jpeg');
     background-repeat: no-repeat;
@@ -142,12 +176,13 @@ nav a:hover {
     display: flex;
     align-items: center;
     text-align: center;
-    color: rgb(8, 8, 8);
+    color: white; /* Changed for better contrast */
+    padding-top: 60px; /* Offset for fixed header */
 }
 
 #hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
-    color: rgb(15, 13, 13);
+    color: white;
     margin-bottom: 1rem;
 }
 
@@ -155,6 +190,7 @@ nav a:hover {
     font-size: 1.5rem;
     max-width: 700px;
     margin: 0 auto;
+    color: white;
 }
 
 .hero-content {
@@ -185,43 +221,11 @@ nav a:hover {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 10px); }
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 10px); }
 }
 
-/* Adding a bit of interactivity to my h2, this effect will only show when the page is refreshed */
-h2 {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
-  animation-delay: 0.2s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-.container h2 {
-    text-align: center;
-}
-
-/* Section Styles */
-section:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.edu-item, .project-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
+/* --- Buttons --- */
 .btn {
     display: inline-block;
     background: var(--secondary);
@@ -230,7 +234,7 @@ section:nth-child(even) {
     border-radius: 4px;
     text-decoration: none;
     margin-top: 1rem;
-    transition: 0.3s;
+    transition: 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
@@ -238,86 +242,199 @@ section:nth-child(even) {
     transform: translateY(-3px);
 }
 
-.btn, button {
+.btn-small {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 1rem;
     transition: 0.3s ease, transform 0.3s ease;
 }
 
-.btn:hover, button:hover {
+body.dark-mode .btn-small {
+    background: var(--accent);
+}
+
+.btn-small:hover {
     transform: scale(1.05);
 }
 
-.edu-item, .project-card, .interest-section {
-    transition: transform 0.3s ease;
-    color:black;
+/* --- Card Layout (for Certs, Projects, etc.) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.edu-item:hover, .project-card:hover, .interest-section:hover {
+.card {
+    background: var(--bg-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
+body.dark-mode .card {
+    background: var(--primary);
+    box-shadow: var(--card-shadow);
+}
 
-/* Skills Grid */
-#skills ul {
-    columns: 2;
+.card-image {
+    width: 60px; /* Adjust as needed */
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode .card h3 {
+    color: var(--secondary);
+}
+
+.card p {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* --- Education Section --- */
+.edu-item {
+    background: var(--bg-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+body.dark-mode .edu-item {
+    background: var(--primary);
+}
+
+/* --- Skills & Tools Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    color: var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .skill-category h3 {
+    color: var(--secondary);
+    border-bottom-color: var(--accent);
+}
+
+.skill-category ul {
     list-style-type: none;
-    margin: 1.5rem 0;
+    padding-left: 0;
 }
 
-#skills li {
+.skill-category li {
     padding: 0.5rem 0;
     position: relative;
     padding-left: 1.5rem;
 }
 
-#skills li:before {
+.skill-category li:before {
     content: "▹";
     position: absolute;
     left: 0;
     color: var(--accent);
 }
 
-/* i had issues with this particular container inheriting the previous, was unable to effect the change i wanted, so i had to add 1 at the end to separate it out **would have to study more on it */
-.container1 {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 30px;
-  font-family: Arial, sans-serif;
+/* --- Project Filter --- */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.container1 h2 {
-  text-align:center;
-  margin-bottom: 30px;
-  color: #2c3e50;
+.btn-filter {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
+.btn-filter:hover,
+.btn-filter.active {
+    background: var(--secondary);
+    color: white;
+}
+
+.project-card {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card.hide {
+    transform: scale(0.9);
+    opacity: 0;
+    display: none;
+}
+
+/* --- Interests Section --- */
 .interests-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px; /* space between columns */
-  flex-wrap: wrap; /* allows stacking on smaller screens */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .interest-section {
-  flex: 1; /* makes all columns equal width */
-  min-width: 250px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
 }
 
-.interest-section h2 {
-  font-size: 1.2rem;
-  color: #34495e;
-  margin-bottom: 15px;
+body.dark-mode .interest-section {
+    background: var(--primary);
+}
+
+.interest-section:hover {
+    transform: translateY(-5px);
+}
+
+.interest-section h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+body.dark-mode .interest-section h3 {
+    color: var(--secondary);
 }
 
 .interest-section ul {
-  padding-left: 20px;
-  line-height: 1.6;
+    padding-left: 20px;
+    line-height: 1.6;
 }
 
-/* Contact Form */
+/* --- Contact Form --- */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -329,9 +446,18 @@ input, textarea {
     margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
+    background: var(--bg-light);
+    color: var(--text-dark);
 }
 
-button {
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #34495e;
+    color: var(--text-dark);
+    border: 1px solid #555;
+}
+
+button[type="submit"] {
     background: var(--accent);
     color: white;
     border: none;
@@ -339,14 +465,23 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
+    transition: 0.3s ease, transform 0.3s ease;
 }
 
-/* Footer */
+button[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+/* --- Footer --- */
 footer {
     background: var(--dark);
     color: white;
     text-align: center;
     padding: 1.5rem;
+}
+
+body.dark-mode footer {
+    background: var(--bg-medium);
 }
 
 .social-icons {
@@ -363,19 +498,70 @@ footer {
     transform: scale(1.2);
 }
 
+/* --- Scroll Animations --- */
+.hidden-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
-/* Responsive Design, this is for smaller screen */
+.hidden-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
-    nav ul {
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 60px; /* Height of header */
+        background: var(--primary);
         flex-direction: column;
         align-items: center;
+        width: 60%;
+        height: calc(100vh - 60px);
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
     }
-    
-    nav li {
-        margin: 0.5rem 0;
+
+    .nav-links li {
+        margin: 1.5rem 0;
     }
-    
-    #skills ul {
-        columns: 1;
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Hamburger toggle animation */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interests-wrapper {
+        flex-direction: column;
     }
 }
