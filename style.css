@@ -295,6 +295,21 @@ body.dark-mode .card {
     border-radius: 4px;
 }
 
+.card-image1 {
+    width: 300px; /* Adjust as needed */
+    height: 300px;
+    object-fit:cover;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.card-image2 {
+    width: 300px; /* Adjust as needed */
+    height: 300px;
+    object-fit:contain;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
 .card h3 {
     color: var(--primary);
     margin-bottom: 0.5rem;
